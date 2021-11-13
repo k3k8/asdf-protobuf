@@ -3,7 +3,7 @@
 # asdf-protoc [![Build](https://github.com/nissy-dev/asdf-protoc/actions/workflows/build.yml/badge.svg)](https://github.com/nissy-dev/asdf-protoc/actions/workflows/build.yml) [![Lint](https://github.com/nissy-dev/asdf-protoc/actions/workflows/lint.yml/badge.svg)](https://github.com/nissy-dev/asdf-protoc/actions/workflows/lint.yml)
 
 
-[protoc](https://github.com/nissy-dev/asdf-protoc) plugin for the [asdf version manager](https://asdf-vm.com).
+[protoc](https://github.com/protocolbuffers/protobuf) plugin for the [asdf version manager](https://asdf-vm.com).
 
 </div>
 
