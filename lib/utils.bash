@@ -3,7 +3,7 @@
 set -euo pipefail
 
 # TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for protoc.
-GH_REPO="https://github.com/nissy-dev/asdf-protoc"
+GH_REPO="https://github.com/protocolbuffers/protobuf"
 TOOL_NAME="protoc"
 TOOL_TEST="protoc --help"
 
@@ -36,13 +36,35 @@ list_all_versions() {
   list_github_tags
 }
 
+get_platform() {
+  local os=$(uname)
+  if [[ "${os}" == "Darwin" ]]; then
+    echo "osx"
+  elif [[ "${os}" == "Linux" ]]; then
+    echo "linux"
+  else
+    echo >&2 "unsupported os: ${os}" && exit 1
+  fi
+}
+
+get_architecture() {
+  local arch=$(uname -m)
+
+  # Apple M1 architecture (arm64) doesn't have binaries, so we install the x86_64 version
+  if [[ "$(get_platform)" == "osx" && "${arch}" == "arm64" ]]; then
+    arch="x86_64"
+  fi
+
+  echo "${arch}"
+}
+
 download_release() {
   local version filename url
   version="$1"
   filename="$2"
 
-  # TODO: Adapt the release URL convention for protoc
-  url="$GH_REPO/archive/v${version}.tar.gz"
+  base_url="https://github.com/protocolbuffers/protobuf/releases/download"
+  url="${base_url}/v${version}/protoc-${version}-$(get_platform)-$(get_architecture).zip"
 
   echo "* Downloading $TOOL_NAME release $version..."
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
