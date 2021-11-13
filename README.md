@@ -2,16 +2,16 @@
 
 # asdf-protoc [![Build](https://github.com/nissy-dev/asdf-protoc/actions/workflows/build.yml/badge.svg)](https://github.com/nissy-dev/asdf-protoc/actions/workflows/build.yml) [![Lint](https://github.com/nissy-dev/asdf-protoc/actions/workflows/lint.yml/badge.svg)](https://github.com/nissy-dev/asdf-protoc/actions/workflows/lint.yml)
 
-
-[protoc](https://github.com/protocolbuffers/protobuf) plugin for the [asdf version manager](https://asdf-vm.com).
-
 </div>
+
+[Protocol Buffers (protoc)](https://github.com/protocolbuffers/protobuf) plugin for the [asdf version manager](https://asdf-vm.com).
+
+This repository was created based on [asdf-plugin-template](https://github.com/asdf-vm/asdf-plugin-template/) because it seem [paxosglobal/asdf-protoc](https://github.com/paxosglobal/asdf-protoc) is not so maintained...
 
 # Contents
 
 - [Dependencies](#dependencies)
 - [Install](#install)
-- [Why?](#why)
 - [Contributing](#contributing)
 - [License](#license)
 
