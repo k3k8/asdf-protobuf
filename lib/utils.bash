@@ -61,7 +61,7 @@ download_release() {
   filename="$2"
 
   base_url="https://github.com/protocolbuffers/protobuf/releases/download"
-  url="${base_url}/v${version}/protoc-${version}.zip"
+  url="${base_url}/v${version}/protobuf-${version}.zip"
 
   echo "* Downloading $TOOL_NAME release $version..."
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
