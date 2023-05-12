@@ -3,8 +3,8 @@
 set -euo pipefail
 
 GH_REPO="https://github.com/protocolbuffers/protobuf"
-TOOL_NAME="protoc"
-TOOL_TEST="protoc --help"
+TOOL_NAME="protobuf"
+TOOL_TEST="protobuf --help"
 
 fail() {
   echo -e "asdf-$TOOL_NAME: $*"
@@ -61,7 +61,7 @@ download_release() {
   filename="$2"
 
   base_url="https://github.com/protocolbuffers/protobuf/releases/download"
-  url="${base_url}/v${version}/protoc-${version}-$(get_platform)-$(get_architecture).zip"
+  url="${base_url}/v${version}/protoc-${version}.zip"
 
   echo "* Downloading $TOOL_NAME release $version..."
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
